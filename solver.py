@@ -7,7 +7,7 @@ flagP= re.compile(r'watevr{.*}')
 alnum = ''
 
 for i in range(90):
-	p = process(f'echo {letter} | ltrace ./vodka',shell=True)
+	p = process(f'echo {alnum} | ltrace ./vodka',shell=True)
 	result = p.recvall().decode()
 	match = re.findall(r'(strcmp\([\"\\n]*, "(.+)"\))',result) 
 
