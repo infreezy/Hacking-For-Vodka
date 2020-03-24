@@ -10,15 +10,13 @@ for i in range(90):
 	p = process(f'echo {letter} | ltrace ./vodka',shell=True)
 	result = p.recvall().decode()
 	match = re.findall(r'(strcmp\([\"\\n]*, "(.+)"\))',result) 
-	
+
 	# Regex sucks so I had to adapt ¯\_(ツ)_/¯
-	if len(match)>1:
-		case=len(match)-1
-	else:
-		case=0
-	
+	if len(match)>1:case=len(match)-1
+	else:case=0
 	alnum += match[case][1]
 
 
 flag = flagP.findall(alnum)[0]
-process(f'echo {flag} >> flag.txt',shell=True)
+print(flag)
+p = process(f'echo {flag} >> flag.txt',shell=True)
