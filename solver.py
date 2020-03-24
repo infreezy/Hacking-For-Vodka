@@ -18,5 +18,4 @@ for i in range(90):
 
 
 flag = flagP.findall(alnum)[0]
-print(flag)
 p = process(f'echo {flag} >> flag.txt',shell=True)
