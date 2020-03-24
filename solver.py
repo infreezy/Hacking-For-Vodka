@@ -21,4 +21,4 @@ for i in range(90):
 		print('why the fuck is this happening bruv')
 
 flag = flagP.findall(alnum)[0]
-p = process(f'echo {flag} >> flag.txt',shell=True)
+process(f'echo {flag} >> flag.txt',shell=True)
